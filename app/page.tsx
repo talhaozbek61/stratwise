@@ -1,7 +1,17 @@
+import Hero from "./components/hero";
+
 export default function Home() {
   return (
-    <h1 className="mt-48 text-4xl font-light flex items-center justify-center text-primary">
-      Stratwise
-    </h1>
+    <main>
+      <Hero content={HeroContent} />
+    </main>
   );
 }
+
+// Contents
+const HeroContent = {
+  title: "Your Trusted Partner for Strategic Growth",
+  paragraph:
+    "Every business is unique—your growth journey should be too. We provide tailored analyses, strategic insights, and actionable solutions to build sustainable success together.",
+  imageURL: "/hero.jpg",
+};

@@ -10,10 +10,10 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const regularStyle =
-    "px-6 py-2.5 rounded-xl font-medium transition duration-300 outline-none";
+    "px-6 py-3 rounded-xl font-medium transition duration-300 outline-none";
   const variants = {
-    primary: "bg-primary text-primary-foreground hover:scale-90",
-    secondary: "bg-secondary text-secondary-foreground hover:scale-90",
+    primary: "bg-primary text-primary-foreground hover:scale-95",
+    secondary: "bg-secondary text-secondary-foreground hover:scale-95",
   };
   return (
     <button

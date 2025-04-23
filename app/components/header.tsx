@@ -14,12 +14,14 @@ export default function Header() {
   return (
     <header>
       <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
+        {/* Logo */}
         <Link
           href="/"
           className="text-2xl text-prirmary font-medium outline-none"
         >
           Stratwise
         </Link>
+
         {/* Desktop Menu */}
         <ul className="flex items-center gap-6 max-sm:hidden">
           {navigation.map((navigate, nIdx) => (
@@ -33,6 +35,8 @@ export default function Header() {
             </li>
           ))}
         </ul>
+
+        {/* Call to Action */}
         <Link
           href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
           className="px-6 py-2.5 rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95 max-sm:hidden"
@@ -46,7 +50,7 @@ export default function Header() {
           className="sm:hidden px-4"
           onClick={() => setOpenMenu(!openMenu)}
         >
-          {openMenu ? <X className="size-6" /> : <Menu className="size-6" />}
+          <Menu className="size-6" />
         </Button>
 
         {/* Mobile Menu */}
@@ -59,11 +63,29 @@ export default function Header() {
               variants={mobileMenuVariants}
               className={
                 openMenu
-                  ? "absolute left-0 top-16 bg-background w-full h-[90%] p-4 sm:hidden"
+                  ? "fixed left-0 top-0 bg-background w-full h-full p-4 sm:hidden z-10"
                   : "hidden"
               }
             >
-              <ul className="relative flex flex-col items-start gap-4 h-full">
+              {/* Logo and Button */}
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/"
+                  className="text-2xl text-prirmary font-medium outline-none"
+                >
+                  Stratwise
+                </Link>
+                <Button
+                  variant="secondary"
+                  className="sm:hidden px-4"
+                  onClick={() => setOpenMenu(!openMenu)}
+                >
+                  <X className="size-6" />
+                </Button>
+              </div>
+
+              {/* Links */}
+              <ul className="mt-6 relative flex flex-col items-start gap-4 h-full">
                 {navigation.map((navigate, nIdx) => (
                   <Link
                     href={navigate.href}
@@ -74,14 +96,16 @@ export default function Header() {
                     {navigate.name}
                   </Link>
                 ))}
-                <Link
-                  href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
-                  className="px-6 py-2.5 absolute bottom-0 left-0 w-full rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95"
-                  onClick={() => setOpenMenu(false)}
-                >
-                  Call Now
-                </Link>
               </ul>
+
+              {/* Call to Action */}
+              <Link
+                href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
+                className="px-6 py-2.5 absolute bottom-5 left-0 w-full rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95"
+                onClick={() => setOpenMenu(false)}
+              >
+                Call Now
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
