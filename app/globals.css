@@ -6,16 +6,27 @@
 }
 
 @theme {
+  /* Fonts */
   --font-display: "GeistSans", "sans-serif";
+
+  /* Colors */
+  --color-primary: #001d21;
+  --color-primary-foreground: #ffff;
+
+  --color-secondary: #ffff;
+  --color-secondary-foreground: var(--color-primary);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --breakpoint-3xl: 120rem;
+
+  /* Container */
+  --container-7xl: 90rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f9f9f7;
+    --foreground: #171717;
   }
 }
 
