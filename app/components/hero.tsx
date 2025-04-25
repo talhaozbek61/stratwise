@@ -1,8 +1,66 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-import { BadgeCheck } from "lucide-react";
+import { motion } from "framer-motion";
+
+import HeroFeature from "./hero-feature";
+
+export default function Hero({ content }: HeroProps) {
+  return (
+    <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8 flex max-lg:flex-col max-lg:gap-16 items-center lg:justify-between h-full">
+      {/* Text */}
+      <motion.div
+        className="lg:max-w-lg max-lg:max-w-2xl max-lg:text-center w-full"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={container}
+      >
+        <motion.h1
+          className="text-5xl sm:text-6xl text-primary"
+          variants={fadeInUp}
+        >
+          {content.title}
+        </motion.h1>
+        <motion.p className="text-gray-500 mt-4" variants={fadeInUp}>
+          {content.paragraph}
+        </motion.p>
+
+        {/* Link */}
+        <motion.a
+          href="https://talhaozbek.com/?ref=stratwise"
+          target="_blank"
+          className="mt-8 px-6 py-3 rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95 inline-block"
+          variants={fadeInUp}
+        >
+          Get Started
+        </motion.a>
+      </motion.div>
+
+      {/* Image */}
+      <motion.div
+        className="relative max-lg:flex max-lg:flex-col"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={container}
+      >
+        <Image
+          src={content.imageURL}
+          alt={content.title}
+          className="sm:w-[calc(100vh-30rem)] lg:max-h-[700px] w-full h-full object-center rounded-2xl"
+          width={1280}
+          height={1920}
+        />
+
+        {/* Features */}
+        <HeroFeature variants={fadeInRight} />
+      </motion.div>
+    </section>
+  );
+}
 
 type TextProps = {
   title: string;
@@ -14,88 +72,22 @@ type HeroProps = {
   content: TextProps;
 };
 
-export default function Hero({ content }: HeroProps) {
-  return (
-    <section className="mx-auto max-w-7xl px-6 p-28 sm:p-32 lg:px-8 lg:pt-32 flex max-lg:flex-col max-lg:gap-16 items-center lg:justify-between">
-      {/* Text */}
-      <div className="lg:max-w-lg max-lg:max-w-2xl max-lg:text-center w-full">
-        <h1 className="text-5xl sm:text-6xl text-primary">{content.title}</h1>
-        <p className="text-gray-500 mt-4">{content.paragraph}</p>
+// Framer Animation
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
 
-        {/* Link */}
-        <Link
-          href="https://talhaozbek.com/?ref=stratwise"
-          target="_blank"
-          className="mt-8 px-6 py-3 rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95 inline-block"
-        >
-          Get Started
-        </Link>
-      </div>
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+};
 
-      {/* Image */}
-      <div className="relative max-lg:flex max-lg:flex-col">
-        <Image
-          src={content.imageURL}
-          alt={content.title}
-          className="sm:w-[calc(100vh-30rem)] lg:max-h-[700px] w-full h-full object-center rounded-2xl"
-          width={1280}
-          height={1920}
-        />
-
-        {/* Feature 1 */}
-        <div className="absolute -left-20 -top-5 max-sm:left-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300">
-          <div className="flex items-start gap-2">
-            {/* Icon */}
-            <div className="bg-primary size-8 p-1 rounded-full">
-              <BadgeCheck className="size-6 text-white" />
-            </div>
-
-            {/* Text */}
-            <div className="text-sm">
-              <h2 className="text-shadow-secondary-foreground font-semibold">
-                Efficiency Boost
-              </h2>
-              <p className="text-gray-500">Optimizing Operational Workflows</p>
-            </div>
-          </div>
-
-          {/* Progress Bar  */}
-          <div className="relative mt-6 w-full h-8 flex gap-2 rounded overflow-hidden">
-            <div className="bg-primary rounded-lg text-primary-foreground w-[calc(85%)]" />
-            <div className="bg-primary/80 rounded-lg w-[calc(100%-85%)]" />
-            <p className="absolute text-primary-foreground text-xs font-medium left-2 top-1/2 -translate-y-1/2">
-              85%
-            </p>
-          </div>
-        </div>
-
-        {/* Feature 2 */}
-        <div className="absolute right-4 bottom-5 max-sm:right-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300">
-          <div className="flex items-start gap-2">
-            {/* Icon */}
-            <div className="bg-primary size-8 p-1 rounded-full">
-              <BadgeCheck className="size-6 text-white" />
-            </div>
-
-            {/* Text */}
-            <div className="text-sm">
-              <h2 className="text-shadow-secondary-foreground font-semibold">
-                Tailored Business Solutions
-              </h2>
-              <p className="text-gray-500">One Size Never Fits All</p>
-            </div>
-          </div>
-
-          {/* Progress Bar  */}
-          <div className="relative mt-6 w-full h-8 flex gap-2 rounded overflow-hidden">
-            <div className="bg-primary rounded-lg text-primary-foreground w-[calc(75%)]" />
-            <div className="bg-primary/80 rounded-lg w-[calc(100%-75%)]" />
-            <p className="absolute text-primary-foreground text-xs font-medium left-2 top-1/2 -translate-y-1/2">
-              75%
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+const fadeInRight = {
+  hidden: { opacity: 0, x: 40 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
+};
