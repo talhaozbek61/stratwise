@@ -47,13 +47,15 @@ export default function Hero({ content }: HeroProps) {
         viewport={{ once: true }}
         variants={container}
       >
-        <Image
-          src={content.imageURL}
-          alt={content.title}
-          className="sm:w-[calc(100vh-30rem)] lg:max-h-[700px] w-full h-full object-center rounded-2xl"
-          width={1280}
-          height={1920}
-        />
+        <motion.div variants={fadeInRight}>
+          <Image
+            src={content.image.url}
+            alt={content.image.alt}
+            width={content.image.width}
+            height={content.image.height}
+            className="sm:w-[calc(100vh-30rem)] lg:max-h-[700px] w-full h-full object-center rounded-2xl"
+          />
+        </motion.div>
 
         {/* Features */}
         <HeroFeature variants={fadeInRight} />
@@ -62,14 +64,21 @@ export default function Hero({ content }: HeroProps) {
   );
 }
 
-type TextProps = {
+type ImageType = {
+  url: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+type ContentProps = {
   title: string;
   paragraph: string;
-  imageURL: string;
+  image: ImageType;
 };
 
 type HeroProps = {
-  content: TextProps;
+  content: ContentProps;
 };
 
 // Framer Animation
