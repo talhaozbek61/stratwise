@@ -9,7 +9,7 @@ export default function HeroFeature({ variants }: Props) {
     <>
       {/* Feature 1 */}
       <motion.div
-        className="absolute -left-20 -top-5 max-sm:left-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300"
+        className="absolute md:-left-20 sm:-left-8 -top-5 max-sm:left-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300"
         variants={variants}
       >
         <div className="flex items-start gap-2">
@@ -23,7 +23,7 @@ export default function HeroFeature({ variants }: Props) {
             <h2 className="text-shadow-secondary-foreground font-semibold">
               Efficiency Boost
             </h2>
-            <p className="text-gray-500">Optimizing Operational Workflows</p>
+            <p className="text-muted">Optimizing Operational Workflows</p>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function HeroFeature({ variants }: Props) {
             <h2 className="text-shadow-secondary-foreground font-semibold">
               Tailored Business Solutions
             </h2>
-            <p className="text-gray-500">One Size Never Fits All</p>
+            <p className="text-muted">One Size Never Fits All</p>
           </div>
         </div>
 

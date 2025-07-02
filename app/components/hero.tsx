@@ -5,14 +5,16 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import Container from "./ui/container";
+
 import HeroFeature from "./hero-feature";
 
 export default function Hero({ content }: HeroProps) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-28 sm:py-32 lg:px-8 flex max-lg:flex-col max-lg:gap-16 items-center lg:justify-between h-full">
+    <Container className="flex max-lg:flex-col max-[1090px]:gap-12 items-center min-[1090px]:justify-between h-full">
       {/* Text */}
       <motion.div
-        className="lg:max-w-lg max-lg:max-w-2xl max-lg:text-center w-full"
+        className="lg:max-w-lg lg:flex-initial max-lg:text-center w-full"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -24,7 +26,7 @@ export default function Hero({ content }: HeroProps) {
         >
           {content.title}
         </motion.h1>
-        <motion.p className="text-gray-500 mt-4" variants={fadeInUp}>
+        <motion.p className="text-muted mt-4" variants={fadeInUp}>
           {content.paragraph}
         </motion.p>
 
@@ -60,7 +62,7 @@ export default function Hero({ content }: HeroProps) {
         {/* Features */}
         <HeroFeature variants={fadeInRight} />
       </motion.div>
-    </section>
+    </Container>
   );
 }
 

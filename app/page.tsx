@@ -43,5 +43,10 @@ const AboutContent = {
       name: "Users Empowered Worldwide",
       value: "50M+",
     },
+    {
+      id: 4,
+      name: "Evolved with Our Solutions",
+      value: "120+",
+    },
   ],
 };
