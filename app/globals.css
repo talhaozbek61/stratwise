@@ -34,7 +34,7 @@
 
 html,
 body {
-  @apply scroll-smooth;
+  @apply scroll-smooth selection:bg-primary-foreground selection:text-primary;
 }
 
 body {

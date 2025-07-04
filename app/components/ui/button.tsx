@@ -14,6 +14,7 @@ export default function Button({
   const variants = {
     primary: "bg-primary text-primary-foreground hover:scale-95",
     secondary: "bg-secondary text-secondary-foreground hover:scale-95",
+    none: "p-0 rounded-none font-normal transition-none",
   };
   return (
     <button
@@ -29,7 +30,7 @@ export default function Button({
 type ButtonProps = {
   children: ReactNode;
   onClick?: () => void;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "none";
   className?: string;
   type?: "button" | "submit" | "reset";
 };
