@@ -1,6 +1,7 @@
 import Hero from "./components/hero";
 import About from "./components/about";
 import Services from "./components/services";
+import Portfolio from "./components/portfolio";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero content={HeroContent} />
       <About content={AboutContent} />
       <Services content={ServiceContent} />
+      <Portfolio content={PortfolioContent} />
     </main>
   );
 }
@@ -81,6 +83,61 @@ const ServiceContent = {
       title: "Comprehensive Risk Solutions",
       paragraph:
         "Proactively identifying and mitigating risks to protect your assets and maintain operational stability in an evolving market.",
+    },
+  ],
+};
+
+const PortfolioContent = {
+  mark: "Portfolio",
+  title: "Real Outcomes, Strategic Impact",
+  caseStudies: [
+    {
+      id: 1,
+      title: "Process Optimization",
+      image: {
+        url: "/case-1.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+      description:
+        "Optimized core business processes, resulting in a 30% increase in overall operational performance.",
+    },
+    {
+      id: 2,
+      title: "Cost Reduction Strategy",
+      image: {
+        url: "/case-2.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+      description:
+        "Executed a financial restructuring plan that reduced annual costs by over $1M for a leading construction firm.",
+    },
+    {
+      id: 3,
+      title: "CRM Implementation",
+      image: {
+        url: "/case-3.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+      description:
+        "Integrated a custom CRM system that significantly improved client engagement and loyalty.",
+    },
+    {
+      id: 4,
+      title: "Response Acceleration",
+      image: {
+        url: "/case-4.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+      description:
+        "Developed a rapid response communication protocol, cutting emergency response times by 40%.",
     },
   ],
 };

@@ -16,7 +16,7 @@ export default function Services({ content }: ServicesProps) {
   const [selectedService, setSelectedService] = useState<number>(1);
 
   return (
-    <div className="bg-primary text-primary-foreground">
+    <div className="bg-primary text-primary-foreground" id="services">
       <Container className="space-y-4">
         {/* Mark */}
         <motion.div
@@ -26,7 +26,6 @@ export default function Services({ content }: ServicesProps) {
           viewport={{ once: true }}
           variants={fadeAnimations.up}
           custom={0.1}
-          id="services"
         >
           <div className="size-2.5 bg-primary-foreground rounded-full" />
           <p className="text-base">{content.mark}</p>
