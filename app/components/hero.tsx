@@ -5,6 +5,8 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import { fadeAnimations } from "@/animations";
+
 import Container from "./ui/container";
 import CustomLink from "./ui/link";
 
@@ -14,41 +16,47 @@ export default function Hero({ content }: HeroProps) {
   return (
     <Container className="flex max-lg:flex-col max-[1090px]:gap-12 items-center min-[1090px]:justify-between h-full">
       {/* Text */}
-      <motion.div
-        className="lg:max-w-lg lg:flex-initial max-lg:text-center w-full"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={container}
-      >
+      <div className="lg:max-w-lg lg:flex-initial max-lg:text-center w-full">
         <motion.h1
           className="text-5xl sm:text-6xl text-primary"
-          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeAnimations.up}
+          custom={0.3}
         >
           {content.title}
         </motion.h1>
-        <motion.p className="text-muted mt-4" variants={fadeInUp}>
+        <motion.p
+          className="text-muted mt-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeAnimations.up}
+          custom={0.6}
+        >
           {content.paragraph}
         </motion.p>
 
         {/* Link */}
         <CustomLink
           className="mt-8 bg-primary text-primary-foreground hover:scale-95 inline-block"
-          animation={fadeInUp}
+          animation={fadeAnimations.up}
+          custom={0.7}
         >
           Get Started
         </CustomLink>
-      </motion.div>
+      </div>
 
       {/* Image */}
-      <motion.div
-        className="relative max-lg:flex max-lg:flex-col"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        variants={container}
-      >
-        <motion.div variants={fadeInRight}>
+      <div className="relative max-lg:flex max-lg:flex-col">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={fadeAnimations.right}
+          custom={1}
+        >
           <Image
             src={content.image.url}
             alt={content.image.alt}
@@ -59,8 +67,8 @@ export default function Hero({ content }: HeroProps) {
         </motion.div>
 
         {/* Features */}
-        <HeroFeature variants={fadeInRight} />
-      </motion.div>
+        <HeroFeature variants={fadeAnimations.left} />
+      </div>
     </Container>
   );
 }
@@ -80,24 +88,4 @@ type ContentProps = {
 
 type HeroProps = {
   content: ContentProps;
-};
-
-// Framer Animation
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };

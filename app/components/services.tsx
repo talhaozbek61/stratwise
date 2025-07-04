@@ -6,6 +6,8 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import { fadeAnimations } from "@/animations";
+
 import Container from "./ui/container";
 import Button from "./ui/button";
 import CustomLink from "./ui/link";
@@ -22,8 +24,8 @@ export default function Services({ content }: ServicesProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={fadeInUpSequence}
-          custom={0}
+          variants={fadeAnimations.up}
+          custom={0.1}
           id="services"
         >
           <div className="size-2.5 bg-primary-foreground rounded-full" />
@@ -36,7 +38,7 @@ export default function Services({ content }: ServicesProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={fadeInUpSequence}
+          variants={fadeAnimations.up}
           custom={0.3}
         >
           {content.title}
@@ -48,8 +50,8 @@ export default function Services({ content }: ServicesProps) {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            variants={fadeInUpSequence}
-            custom={0.6}
+            variants={fadeAnimations.up}
+            custom={0.5}
           >
             <Image
               src={content.image.url}
@@ -63,14 +65,7 @@ export default function Services({ content }: ServicesProps) {
           {/* Services Content */}
           <div className="space-y-4">
             {/* Services List */}
-            <motion.ul
-              className="divide-y divide-primary-foreground lg:max-w-md"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={fadeInRightSequence}
-              custom={0.8}
-            >
+            <ul className="divide-y divide-primary-foreground lg:max-w-md">
               {content.services.map((service) => (
                 <Button
                   variant="none"
@@ -81,11 +76,13 @@ export default function Services({ content }: ServicesProps) {
                       : "text-primary-foreground/50"
                   }`}
                   onClick={() => setSelectedService(service.id)}
+                  animation={fadeAnimations.right}
+                  custom={0.6 + service.id * 0.1}
                 >
                   {service.title}
                 </Button>
               ))}
-            </motion.ul>
+            </ul>
 
             {/* Service Paragraph */}
             <motion.p
@@ -93,8 +90,8 @@ export default function Services({ content }: ServicesProps) {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              variants={fadeInRightSequence}
-              custom={0.9}
+              variants={fadeAnimations.right}
+              custom={1.1}
             >
               {content.services[selectedService - 1]?.paragraph}
             </motion.p>
@@ -102,8 +99,8 @@ export default function Services({ content }: ServicesProps) {
             {/* Link */}
             <CustomLink
               className="mt-4 bg-primary-foreground text-primary hover:scale-95 inline-block"
-              animation={fadeInRightSequence}
-              custom={1}
+              animation={fadeAnimations.right}
+              custom={1.2}
             >
               Learn more
             </CustomLink>
@@ -136,27 +133,4 @@ type ContentProps = {
 
 type ServicesProps = {
   content: ContentProps;
-};
-
-// Framer Animation
-const fadeInUpSequence = {
-  hidden: { y: 20, opacity: 0 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.3,
-    },
-  }),
-};
-
-const fadeInRightSequence = {
-  hidden: { x: 20, opacity: 0 },
-  show: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.3,
-    },
-  }),
 };

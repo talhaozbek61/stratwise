@@ -4,11 +4,13 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import { fadeAnimations } from "@/animations";
+
 import Container from "./ui/container";
 
 export default function About({ content }: AboutProps) {
   return (
-    <motion.div className="bg-primary-foreground/50 text-primary" id="about">
+    <div className="bg-primary-foreground/50 text-primary" id="about">
       <Container className="flex max-lg:flex-col gap-12 items-center">
         {/* Image */}
         <motion.div
@@ -16,7 +18,7 @@ export default function About({ content }: AboutProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={sequentialFadeIn}
+          variants={fadeAnimations.up}
           custom={0.7}
         >
           <Image
@@ -34,7 +36,7 @@ export default function About({ content }: AboutProps) {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={sequentialFadeIn}
+          variants={fadeAnimations.up}
           custom={0.5}
         >
           {/* Header */}
@@ -58,7 +60,7 @@ export default function About({ content }: AboutProps) {
           </div>
         </motion.div>
       </Container>
-    </motion.div>
+    </div>
   );
 }
 
@@ -83,16 +85,4 @@ type ContentProps = {
 
 type AboutProps = {
   content: ContentProps;
-};
-
-// Framer Animation
-const sequentialFadeIn = {
-  hidden: { y: 40, opacity: 0 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.3,
-    },
-  }),
 };

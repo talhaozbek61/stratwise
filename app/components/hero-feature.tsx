@@ -10,7 +10,11 @@ export default function HeroFeature({ variants }: Props) {
       {/* Feature 1 */}
       <motion.div
         className="absolute md:-left-20 sm:-left-8 -top-5 max-sm:left-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         variants={variants}
+        custom={1.2}
       >
         <div className="flex items-start gap-2">
           {/* Icon */}
@@ -40,7 +44,11 @@ export default function HeroFeature({ variants }: Props) {
       {/* Feature 2 */}
       <motion.div
         className="absolute right-4 bottom-5 max-sm:right-5 h-min bg-secondary text-primary p-4 rounded-2xl shadow-lg shadow-background/50 transition-all duration-300"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
         variants={variants}
+        custom={1.4}
       >
         <div className="flex items-start gap-2">
           {/* Icon */}

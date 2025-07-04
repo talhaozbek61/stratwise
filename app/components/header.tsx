@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
+
+import { fadeAnimations, slideAnimations } from "@/animations";
+
 import { Menu, X } from "lucide-react";
 
 import Button from "./ui/button";
@@ -12,7 +15,13 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <header>
+    <motion.header
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={fadeAnimations.down}
+      custom={1}
+    >
       <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
         {/* Logo */}
         <CustomLink
@@ -58,10 +67,10 @@ export default function Header() {
         <AnimatePresence initial={false}>
           {openMenu && (
             <motion.div
-              initial="initial"
-              animate="animate"
+              initial="hidden"
+              whileInView="show"
               exit="exit"
-              variants={mobileMenuVariants}
+              variants={slideAnimations.left}
               className={
                 openMenu
                   ? "fixed left-0 top-0 bg-background w-full h-full p-4 sm:hidden z-10"
@@ -114,7 +123,7 @@ export default function Header() {
           )}
         </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 
@@ -141,12 +150,3 @@ const navigation: navigationType[] = [
     href: "#blog",
   },
 ];
-
-const mobileMenuVariants = {
-  initial: { x: -50, opacity: 0 },
-  animate: {
-    opacity: 1,
-    x: 1,
-  },
-  exit: { x: -50, opacity: 0 },
-};
