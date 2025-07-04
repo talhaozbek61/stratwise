@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 import Container from "./ui/container";
 import Button from "./ui/button";
+import CustomLink from "./ui/link";
 
 export default function Services({ content }: ServicesProps) {
   const [selectedService, setSelectedService] = useState<number>(1);
@@ -18,8 +19,8 @@ export default function Services({ content }: ServicesProps) {
         {/* Mark */}
         <motion.div
           className="flex items-center gap-3"
-          initial="offscreen"
-          whileInView="onscreen"
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
           variants={fadeInUpSequence}
           custom={0}
@@ -32,8 +33,8 @@ export default function Services({ content }: ServicesProps) {
         {/* Header */}
         <motion.h2
           className="text-2xl/10 sm:text-3xl xl:text-4xl sm:tracking-tight sm:leading-12 max-w-2xl"
-          initial="offscreen"
-          whileInView="onscreen"
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
           variants={fadeInUpSequence}
           custom={0.3}
@@ -44,8 +45,8 @@ export default function Services({ content }: ServicesProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           {/* Image */}
           <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
             variants={fadeInUpSequence}
             custom={0.6}
@@ -64,8 +65,8 @@ export default function Services({ content }: ServicesProps) {
             {/* Services List */}
             <motion.ul
               className="divide-y divide-primary-foreground lg:max-w-md"
-              initial="offscreen"
-              whileInView="onscreen"
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               variants={fadeInRightSequence}
               custom={0.8}
@@ -89,8 +90,8 @@ export default function Services({ content }: ServicesProps) {
             {/* Service Paragraph */}
             <motion.p
               className="text-base/7 lg:max-w-md text-muted"
-              initial="offscreen"
-              whileInView="onscreen"
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               variants={fadeInRightSequence}
               custom={0.9}
@@ -99,18 +100,13 @@ export default function Services({ content }: ServicesProps) {
             </motion.p>
 
             {/* Link */}
-            <motion.a
-              href="https://talhaozbek.com/?ref=stratwise"
-              target="_blank"
-              className="mt-4 px-6 py-3 rounded-xl font-medium transition duration-300 outline-none bg-primary-foreground text-primary hover:scale-95 inline-block"
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={fadeInRightSequence}
+            <CustomLink
+              className="mt-4 bg-primary-foreground text-primary hover:scale-95 inline-block"
+              animation={fadeInRightSequence}
               custom={1}
             >
               Learn more
-            </motion.a>
+            </CustomLink>
           </div>
         </div>
       </Container>
@@ -144,8 +140,8 @@ type ServicesProps = {
 
 // Framer Animation
 const fadeInUpSequence = {
-  offscreen: { y: 20, opacity: 0 },
-  onscreen: (i: number) => ({
+  hidden: { y: 20, opacity: 0 },
+  show: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -155,8 +151,8 @@ const fadeInUpSequence = {
 };
 
 const fadeInRightSequence = {
-  offscreen: { x: 20, opacity: 0 },
-  onscreen: (i: number) => ({
+  hidden: { x: 20, opacity: 0 },
+  show: (i: number) => ({
     opacity: 1,
     x: 0,
     transition: {

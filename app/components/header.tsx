@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 
 import Button from "./ui/button";
+import CustomLink from "./ui/link";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -15,34 +15,35 @@ export default function Header() {
     <header>
       <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
         {/* Logo */}
-        <Link
+        <CustomLink
           href="/"
-          className="text-2xl text-prirmary font-medium outline-none"
+          variant="none"
+          target="_self"
+          className="text-2xl text-primary font-medium"
         >
           Stratwise
-        </Link>
+        </CustomLink>
 
         {/* Desktop Menu */}
         <ul className="flex items-center gap-6 max-sm:hidden">
           {navigation.map((navigate, nIdx) => (
             <li key={nIdx}>
-              <Link
+              <CustomLink
                 href={navigate.href}
-                className="hover:text-primary/85 duration-300 outline-none"
+                variant="none"
+                target="_self"
+                className="hover:text-primary/85"
               >
                 {navigate.name}
-              </Link>
+              </CustomLink>
             </li>
           ))}
         </ul>
 
         {/* Call to Action */}
-        <Link
-          href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
-          className="px-6 py-2.5 rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95 max-sm:hidden"
-        >
+        <CustomLink className="py-2.5 bg-primary text-primary-foreground hover:scale-95 max-sm:hidden">
           Call Now
-        </Link>
+        </CustomLink>
 
         {/* Mobile Menu Button */}
         <Button
@@ -69,12 +70,14 @@ export default function Header() {
             >
               {/* Logo and Button */}
               <div className="flex items-center justify-between">
-                <Link
+                <CustomLink
                   href="/"
-                  className="text-2xl text-prirmary font-medium outline-none"
+                  variant="none"
+                  target="_self"
+                  className="text-2xl text-primary font-medium"
                 >
                   Stratwise
-                </Link>
+                </CustomLink>
                 <Button
                   variant="secondary"
                   className="sm:hidden px-4"
@@ -87,25 +90,26 @@ export default function Header() {
               {/* Links */}
               <ul className="mt-6 relative flex flex-col items-start gap-4 h-full">
                 {navigation.map((navigate, nIdx) => (
-                  <Link
+                  <CustomLink
                     href={navigate.href}
+                    variant="none"
+                    target="_self"
                     key={nIdx}
-                    className="text-primary font-medium outline-none w-full py-1"
+                    className="text-primary font-medium w-full py-1"
                     onClick={() => setOpenMenu(false)}
                   >
                     {navigate.name}
-                  </Link>
+                  </CustomLink>
                 ))}
               </ul>
 
               {/* Call to Action */}
-              <Link
-                href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`}
-                className="px-6 py-2.5 absolute bottom-5 left-0 w-full rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95"
+              <CustomLink
+                className="py-2.5 absolute bottom-5 left-0 w-full bg-primary text-primary-foreground hover:scale-95"
                 onClick={() => setOpenMenu(false)}
               >
                 Call Now
-              </Link>
+              </CustomLink>
             </motion.div>
           )}
         </AnimatePresence>

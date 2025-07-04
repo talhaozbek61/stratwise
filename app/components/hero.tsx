@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import Container from "./ui/container";
+import CustomLink from "./ui/link";
 
 import HeroFeature from "./hero-feature";
 
@@ -31,14 +32,12 @@ export default function Hero({ content }: HeroProps) {
         </motion.p>
 
         {/* Link */}
-        <motion.a
-          href="https://talhaozbek.com/?ref=stratwise"
-          target="_blank"
-          className="mt-8 px-6 py-3 rounded-xl font-medium transition duration-300 outline-none bg-primary text-primary-foreground hover:scale-95 inline-block"
-          variants={fadeInUp}
+        <CustomLink
+          className="mt-8 bg-primary text-primary-foreground hover:scale-95 inline-block"
+          animation={fadeInUp}
         >
           Get Started
-        </motion.a>
+        </CustomLink>
       </motion.div>
 
       {/* Image */}

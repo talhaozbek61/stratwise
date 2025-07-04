@@ -1,18 +1,21 @@
 import React, { ReactNode } from "react";
 
+import Link from "next/link";
+
 import { twMerge } from "tailwind-merge";
 
 import { motion, MotionProps } from "framer-motion";
 
-export default function Button({
+export default function CustomLink({
   children,
   onClick,
   variant = "primary",
   className,
-  type = "button",
+  href = "https://talhaozbek.com/?ref=stratwise",
+  target = "_blank",
   animation,
   custom,
-}: ButtonProps) {
+}: LinkProps) {
   const regularStyle =
     "px-6 py-3 rounded-xl font-medium transition duration-300 outline-none";
 
@@ -32,19 +35,24 @@ export default function Button({
     custom,
   };
 
-  return (
-    <motion.button type={type} {...commonProps}>
+  return target === "_blank" ? (
+    <motion.a href={href} target="_blank" rel="author" {...commonProps}>
       {children}
-    </motion.button>
+    </motion.a>
+  ) : (
+    <Link href={href} passHref>
+      <motion.div {...commonProps}>{children}</motion.div>
+    </Link>
   );
 }
 
-type ButtonProps = {
+type LinkProps = {
   children: ReactNode;
   onClick?: () => void;
   variant?: "primary" | "secondary" | "none";
   className?: string;
-  type?: "button" | "submit" | "reset";
+  href?: string;
+  target?: "_blank" | "_self";
   animation?: MotionProps["variants"];
   custom?: number;
 };
