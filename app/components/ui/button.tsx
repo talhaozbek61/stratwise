@@ -12,9 +12,10 @@ export default function Button({
   type = "button",
   animation,
   custom,
+  disabled = false,
 }: ButtonProps) {
   const regularStyle =
-    "px-6 py-3 rounded-xl font-medium transition duration-300 outline-none";
+    "px-6 py-3 rounded-xl font-medium transition duration-300 outline-none cursor-pointer";
 
   const variants = {
     primary: "bg-primary text-primary-foreground hover:scale-95",
@@ -30,6 +31,7 @@ export default function Button({
     viewport: { once: true },
     variants: animation,
     custom,
+    disabled,
   };
 
   return (
@@ -41,10 +43,11 @@ export default function Button({
 
 type ButtonProps = {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   variant?: "primary" | "secondary" | "none";
   className?: string;
   type?: "button" | "submit" | "reset";
   animation?: MotionProps["variants"];
   custom?: number;
+  disabled?: boolean;
 };

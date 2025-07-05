@@ -2,6 +2,7 @@ import Hero from "./components/hero";
 import About from "./components/about";
 import Services from "./components/services";
 import Portfolio from "./components/portfolio";
+import Blog from "./components/blog";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <About content={AboutContent} />
       <Services content={ServiceContent} />
       <Portfolio content={PortfolioContent} />
+      <Blog content={BlogContent} />
     </main>
   );
 }
@@ -138,6 +140,91 @@ const PortfolioContent = {
       },
       description:
         "Developed a rapid response communication protocol, cutting emergency response times by 40%.",
+    },
+  ],
+};
+
+const BlogContent = {
+  mark: "Blog and articles",
+  title: "Thought Leadership & Industry Perspectives",
+  blogPosts: [
+    {
+      id: 1,
+      type: "Insight",
+      title: "Adapting Strategy in a Shifting Market",
+      description:
+        "Explore how businesses can pivot their strategy to stay competitive in rapidly changing market conditions.",
+      image: {
+        url: "/blog-1.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+    },
+    {
+      id: 2,
+      type: "News",
+      title: "Maximizing Your Marketing ROI",
+      description:
+        "Discover actionable methods to improve the return on your marketing investments with data-driven tactics.",
+      image: {
+        url: "/blog-2.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+    },
+    {
+      id: 3,
+      type: "Guide",
+      title: "Building Financial Resilience",
+      description:
+        "Learn practical steps to strengthen your financial foundation and navigate economic uncertainty.",
+      image: {
+        url: "/blog-3.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+    },
+    {
+      id: 4,
+      type: "Insight",
+      title: "Technology Trends That Drive Business Growth",
+      description:
+        "Stay ahead with emerging technologies that streamline operations and create competitive advantages.",
+      image: {
+        url: "/blog-4.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+    },
+    {
+      id: 5,
+      type: "Report",
+      title: "Improving Client Retention Rates",
+      description:
+        "Understand key drivers of customer loyalty and how to build long-term, profitable relationships.",
+      image: {
+        url: "/blog-5.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
+    },
+    {
+      id: 6,
+      type: "News",
+      title: "Leadership in Times of Change",
+      description:
+        "Explore how adaptive leadership can empower teams and sustain performance during transitional periods.",
+      image: {
+        url: "/blog-6.jpg",
+        alt: "About Image",
+        width: 1024,
+        height: 683,
+      },
     },
   ],
 };

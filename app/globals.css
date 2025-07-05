@@ -23,6 +23,13 @@
 
   /* Container */
   /* --container-7xl: 90rem; */
+
+  /* Embla Slider */
+  --embla-slide-spacing: 1.5rem;
+  --embla-slide-size-full: 100%;
+  --embla-slide-size-sm: 33%;
+  --embla-slide-size-md: 45%;
+  --embla-slide-size-lg: 65%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,4 +48,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-display);
+}
+
+/* Embla Slider */
+.embla__viewport {
+  @apply overflow-visible;
+}
+
+.embla__container {
+  @apply flex touch-pan-y gap-(--embla-slide-spacing);
+}
+
+.embla__slide {
+  @apply transform-cpu min-w-0 flex-[0_0_var(--embla-slide-size-full)] sm:flex-[0_0_var(--embla-slide-size-lg)] md:flex-[0_0_var(--embla-slide-size-md)] lg:flex-[0_0_var(--embla-slide-size-sm)];
 }

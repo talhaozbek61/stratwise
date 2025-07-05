@@ -69,7 +69,7 @@ export default function Services({ content }: ServicesProps) {
                 <Button
                   variant="none"
                   key={service.id}
-                  className={`w-full text-xl text-start py-4 font-medium cursor-pointer ${
+                  className={`w-full text-xl text-start py-4 font-medium ${
                     service.id === selectedService
                       ? "text-primary-foreground"
                       : "text-primary-foreground/50"

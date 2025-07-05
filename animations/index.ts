@@ -35,7 +35,7 @@ const fadeInRightSequence: Variants = {
 };
 
 const fadeInLeftSequence: Variants = {
-  hidden: { x: 50, opacity: 0 },
+  hidden: { x: -50, opacity: 0 },
   show: (i: number) => ({
     opacity: 1,
     x: 0,
