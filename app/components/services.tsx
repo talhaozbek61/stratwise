@@ -72,7 +72,7 @@ export default function Services({ content }: ServicesProps) {
                   className={`w-full text-xl text-start py-4 font-medium ${
                     service.id === selectedService
                       ? "text-primary-foreground"
-                      : "text-primary-foreground/50"
+                      : "text-primary-foreground/70"
                   }`}
                   onClick={() => setSelectedService(service.id)}
                   animation={fadeAnimations.right}
@@ -85,7 +85,7 @@ export default function Services({ content }: ServicesProps) {
 
             {/* Service Paragraph */}
             <motion.p
-              className="text-base/7 lg:max-w-md text-muted"
+              className="text-base/7 lg:max-w-md text-primary-muted"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
@@ -97,7 +97,8 @@ export default function Services({ content }: ServicesProps) {
 
             {/* Link */}
             <CustomLink
-              className="mt-4 bg-primary-foreground text-primary hover:scale-95 inline-block"
+              variant="secondary"
+              className="mt-4 inline-block"
               animation={fadeAnimations.right}
               custom={1.2}
             >

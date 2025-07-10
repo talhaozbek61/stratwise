@@ -12,11 +12,13 @@
   /* Colors */
   --color-primary: #001d21;
   --color-primary-foreground: #ffff;
+  --color-primary-muted: #99a1af;
 
   --color-secondary: #ffff;
   --color-secondary-foreground: var(--color-primary);
+  --color-secondary-muted: #6a7282;
 
-  --color-muted: #6a7282;
+  --color-accent: #cdcbff;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

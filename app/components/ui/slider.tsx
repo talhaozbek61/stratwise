@@ -68,7 +68,7 @@ export default function Slider({ content }: SliderProps) {
                 </motion.h3>
 
                 <motion.p
-                  className="text-sm font-medium text-muted"
+                  className="text-sm font-medium text-primary-muted"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}

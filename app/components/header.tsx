@@ -21,6 +21,7 @@ export default function Header() {
       viewport={{ once: true }}
       variants={fadeAnimations.down}
       custom={1}
+      className="bg-secondary/30 text-secondary-foreground"
     >
       <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
         {/* Logo */}
@@ -28,7 +29,7 @@ export default function Header() {
           href="/"
           variant="none"
           target="_self"
-          className="text-2xl text-primary font-medium"
+          className="text-2xl font-medium"
         >
           Stratwise
         </CustomLink>
@@ -50,9 +51,7 @@ export default function Header() {
         </ul>
 
         {/* Call to Action */}
-        <CustomLink className="py-2.5 bg-primary text-primary-foreground hover:scale-95 max-sm:hidden">
-          Call Now
-        </CustomLink>
+        <CustomLink className="py-2.5 max-sm:hidden">Call Now</CustomLink>
 
         {/* Mobile Menu Button */}
         <Button
@@ -83,7 +82,7 @@ export default function Header() {
                   href="/"
                   variant="none"
                   target="_self"
-                  className="text-2xl text-primary font-medium"
+                  className="text-2xl font-medium"
                 >
                   Stratwise
                 </CustomLink>
@@ -114,7 +113,7 @@ export default function Header() {
 
               {/* Call to Action */}
               <CustomLink
-                className="py-2.5 absolute bottom-5 left-0 w-full bg-primary text-primary-foreground hover:scale-95"
+                className="py-2.5 absolute bottom-5 left-0 w-full"
                 onClick={() => setOpenMenu(false)}
               >
                 Call Now

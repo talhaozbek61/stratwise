@@ -19,7 +19,7 @@ export default function HeroFeature({ variants }: Props) {
         <div className="flex items-start gap-2">
           {/* Icon */}
           <div className="bg-primary size-8 p-1 rounded-full">
-            <BadgeCheck className="size-6 text-white" />
+            <BadgeCheck className="size-6 fill-white" />
           </div>
 
           {/* Text */}
@@ -27,15 +27,17 @@ export default function HeroFeature({ variants }: Props) {
             <h2 className="text-shadow-secondary-foreground font-semibold">
               Efficiency Boost
             </h2>
-            <p className="text-muted">Optimizing Operational Workflows</p>
+            <p className="text-secondary-muted">
+              Optimizing Operational Workflows
+            </p>
           </div>
         </div>
 
         {/* Progress Bar  */}
         <div className="relative mt-6 w-full h-8 flex gap-2 rounded overflow-hidden">
-          <div className="bg-primary rounded-lg text-primary-foreground w-[calc(85%)]" />
-          <div className="bg-primary/80 rounded-lg w-[calc(100%-85%)]" />
-          <p className="absolute text-primary-foreground text-xs font-medium left-2 top-1/2 -translate-y-1/2">
+          <div className="bg-accent rounded-lg w-[calc(85%)]" />
+          <div className="bg-accent/40 rounded-lg w-[calc(100%-85%)]" />
+          <p className="absolute text-primary text-xs font-medium left-2 top-1/2 -translate-y-1/2">
             85%
           </p>
         </div>
@@ -53,7 +55,7 @@ export default function HeroFeature({ variants }: Props) {
         <div className="flex items-start gap-2">
           {/* Icon */}
           <div className="bg-primary size-8 p-1 rounded-full">
-            <BadgeCheck className="size-6 text-white" />
+            <BadgeCheck className="size-6 fill-white" />
           </div>
 
           {/* Text */}
@@ -61,15 +63,15 @@ export default function HeroFeature({ variants }: Props) {
             <h2 className="text-shadow-secondary-foreground font-semibold">
               Tailored Business Solutions
             </h2>
-            <p className="text-muted">One Size Never Fits All</p>
+            <p className="text-secondary-muted">One Size Never Fits All</p>
           </div>
         </div>
 
         {/* Progress Bar  */}
         <div className="relative mt-6 w-full h-8 flex gap-2 rounded overflow-hidden">
-          <div className="bg-primary rounded-lg text-primary-foreground w-[calc(75%)]" />
-          <div className="bg-primary/80 rounded-lg w-[calc(100%-75%)]" />
-          <p className="absolute text-primary-foreground text-xs font-medium left-2 top-1/2 -translate-y-1/2">
+          <div className="bg-accent rounded-lg w-[calc(75%)]" />
+          <div className="bg-accent/40 rounded-lg w-[calc(100%-75%)]" />
+          <p className="absolute text-primary text-xs font-medium left-2 top-1/2 -translate-y-1/2">
             75%
           </p>
         </div>

@@ -64,7 +64,7 @@ export default function Portfolio({ content }: PortfolioProps) {
               </div>
 
               {/* Description */}
-              <p className="text-sm font-medium text-muted">
+              <p className="text-sm font-medium text-secondary-muted">
                 {study.description}
               </p>
             </motion.div>

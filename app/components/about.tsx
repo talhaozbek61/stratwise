@@ -10,7 +10,7 @@ import Container from "./ui/container";
 
 export default function About({ content }: AboutProps) {
   return (
-    <div className="bg-primary-foreground/50 text-primary" id="about">
+    <div className="bg-secondary text-secondary-foreground" id="about">
       <Container className="flex max-lg:flex-col gap-12 items-center">
         {/* Image */}
         <motion.div
@@ -54,7 +54,7 @@ export default function About({ content }: AboutProps) {
                 <h4 className="text-3xl tracking-tight sm:text-4xl">
                   {stat.value}
                 </h4>
-                <p className="text-base text-muted">{stat.name}</p>
+                <p className="text-base text-secondary-muted">{stat.name}</p>
               </div>
             ))}
           </div>

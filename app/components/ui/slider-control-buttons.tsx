@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, useCallback } from "react";
 
-import { LucideArrowLeft, LucideArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { fadeAnimations } from "@/animations";
 
@@ -41,7 +41,7 @@ export const PrevButton: React.FC<PropType> = ({
       animation={fadeAnimations.right}
       custom={0.3}
     >
-      <LucideArrowLeft className="stroke-primary size-6" />
+      <ArrowLeft className="stroke-primary size-6" />
       {children}
     </Button>
   );
@@ -61,7 +61,7 @@ export const NextButton: React.FC<PropType> = ({
       animation={fadeAnimations.right}
       custom={0.1}
     >
-      <LucideArrowRight className="stroke-primary size-6" />
+      <ArrowRight className="stroke-primary size-6" />
       {children}
     </Button>
   );
