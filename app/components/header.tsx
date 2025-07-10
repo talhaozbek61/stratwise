@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 
-import { fadeAnimations, slideAnimations } from "@/animations";
+import { slideAnimations } from "@/animations";
 
 import { Menu, X } from "lucide-react";
 
@@ -15,14 +15,7 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
-    <motion.header
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      variants={fadeAnimations.down}
-      custom={1}
-      className="bg-secondary/30 text-secondary-foreground"
-    >
+    <header className="bg-secondary/30 text-secondary-foreground">
       <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
         {/* Logo */}
         <CustomLink
@@ -122,7 +115,7 @@ export default function Header() {
           )}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </header>
   );
 }
 
@@ -134,18 +127,18 @@ type navigationType = {
 const navigation: navigationType[] = [
   {
     name: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     name: "Services",
-    href: "#services",
+    href: "/#services",
   },
   {
     name: "Portfolio",
-    href: "#portfolio",
+    href: "/#portfolio",
   },
   {
     name: "Blog",
-    href: "#blog",
+    href: "/#blog",
   },
 ];

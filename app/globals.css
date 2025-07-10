@@ -43,7 +43,7 @@
 
 html,
 body {
-  @apply scroll-smooth selection:bg-primary-foreground selection:text-primary;
+  @apply scroll-smooth selection:bg-primary-foreground selection:text-primary h-full;
 }
 
 body {

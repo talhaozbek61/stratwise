@@ -6,6 +6,7 @@ import "./globals.css";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ScrollActions from "./components/scroll-actions";
 
 export const metadata: Metadata = {
   title: "Stratwise",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${GeistSans.variable} antialiased`}>
         <Header />
         {children}
+        <ScrollActions />
         <Footer />
       </body>
     </html>
