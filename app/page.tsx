@@ -22,7 +22,7 @@ const HeroContent = {
   paragraph:
     "Every business is unique—your growth journey should be too. We provide tailored analyses, strategic insights, and actionable solutions to build sustainable success together.",
   image: {
-    url: "/hero.jpg",
+    url: "/hero.webp",
     alt: "Your Trusted Partner for Strategic Growth Image",
     width: 1280,
     height: 1920,
@@ -32,7 +32,7 @@ const HeroContent = {
 const AboutContent = {
   title:
     "Empowering Businesses with Strategic Vision, Tailored Solutions, and a Decade of Proven Expertise.",
-  image: { url: "/about.jpg", alt: "About Image", width: 1280, height: 853 },
+  image: { url: "/about.webp", alt: "About Image", width: 1280, height: 853 },
   stats: [
     {
       id: 1,
@@ -60,7 +60,12 @@ const AboutContent = {
 const ServiceContent = {
   mark: "Services",
   title: "Driving Growth Through Expert Solutions",
-  image: { url: "/service.jpg", alt: "Service Image", width: 887, height: 797 },
+  image: {
+    url: "/service.webp",
+    alt: "Service Image",
+    width: 887,
+    height: 797,
+  },
   services: [
     {
       id: 1,
@@ -97,7 +102,7 @@ const PortfolioContent = {
       id: 1,
       title: "Process Optimization",
       image: {
-        url: "/case-1.jpg",
+        url: "/case-1.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -109,7 +114,7 @@ const PortfolioContent = {
       id: 2,
       title: "Cost Reduction Strategy",
       image: {
-        url: "/case-2.jpg",
+        url: "/case-2.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -121,7 +126,7 @@ const PortfolioContent = {
       id: 3,
       title: "CRM Implementation",
       image: {
-        url: "/case-3.jpg",
+        url: "/case-3.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -133,7 +138,7 @@ const PortfolioContent = {
       id: 4,
       title: "Response Acceleration",
       image: {
-        url: "/case-4.jpg",
+        url: "/case-4.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -155,7 +160,7 @@ const BlogContent = {
       description:
         "Explore how businesses can pivot their strategy to stay competitive in rapidly changing market conditions.",
       image: {
-        url: "/blog-1.jpg",
+        url: "/blog-1.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -168,7 +173,7 @@ const BlogContent = {
       description:
         "Discover actionable methods to improve the return on your marketing investments with data-driven tactics.",
       image: {
-        url: "/blog-2.jpg",
+        url: "/blog-2.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -181,7 +186,7 @@ const BlogContent = {
       description:
         "Learn practical steps to strengthen your financial foundation and navigate economic uncertainty.",
       image: {
-        url: "/blog-3.jpg",
+        url: "/blog-3.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -194,7 +199,7 @@ const BlogContent = {
       description:
         "Stay ahead with emerging technologies that streamline operations and create competitive advantages.",
       image: {
-        url: "/blog-4.jpg",
+        url: "/blog-4.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -207,7 +212,7 @@ const BlogContent = {
       description:
         "Understand key drivers of customer loyalty and how to build long-term, profitable relationships.",
       image: {
-        url: "/blog-5.jpg",
+        url: "/blog-5.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
@@ -220,7 +225,7 @@ const BlogContent = {
       description:
         "Explore how adaptive leadership can empower teams and sustain performance during transitional periods.",
       image: {
-        url: "/blog-6.jpg",
+        url: "/blog-6.webp",
         alt: "About Image",
         width: 1024,
         height: 683,
