@@ -45,10 +45,14 @@ export default function About({ content }: AboutProps) {
           </h1>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-8 xl:grid-cols-4 mt-8">
+          <div className="grid grid-cols-2 auto-cols-max gap-8 min-[1173px]:grid-cols-4 mt-8">
             {content.stats.map((stat) => (
               <div
-                className="flex flex-col items-start gap-2 max-w-40"
+                className={`flex flex-col items-start gap-2 max-[1173px]:max-w-40 ${
+                  stat.id % 2 == 0
+                    ? "justify-self-end xl:justify-self-auto"
+                    : ""
+                }`}
                 key={stat.id}
               >
                 <h4 className="text-3xl tracking-tight sm:text-4xl">

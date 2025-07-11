@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "motion/react";
 
@@ -13,6 +13,11 @@ import CustomLink from "./ui/link";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", openMenu);
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [openMenu]);
 
   return (
     <header className="bg-secondary/30 text-secondary-foreground">
@@ -103,14 +108,6 @@ export default function Header() {
                   </CustomLink>
                 ))}
               </ul>
-
-              {/* Call to Action */}
-              <CustomLink
-                className="py-2.5 absolute bottom-5 left-0 w-full"
-                onClick={() => setOpenMenu(false)}
-              >
-                Call Now
-              </CustomLink>
             </motion.div>
           )}
         </AnimatePresence>

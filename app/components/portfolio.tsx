@@ -50,7 +50,7 @@ export default function Portfolio({ content }: PortfolioProps) {
               className="border-t-[0.5px] border-primary space-y-4 group"
             >
               {/* Header */}
-              <h3 className="text-base font-semibold mt-4">{study.title}</h3>
+              <h3 className="text-base font-semibold mt-2">{study.title}</h3>
 
               {/* Image */}
               <div className="overflow-hidden rounded-xl">
