@@ -62,7 +62,7 @@ export default function Hero({ content }: HeroProps) {
             alt={content.image.alt}
             width={content.image.width}
             height={content.image.height}
-            className="sm:w-[calc(100vh-30rem)] lg:max-h-[700px] w-full h-full object-center rounded-2xl"
+            className="sm:w-[calc(100vh-30rem)] max-w-md lg:max-h-[700px] w-full h-full object-center rounded-2xl"
           />
         </motion.div>
 
