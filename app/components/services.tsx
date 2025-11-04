@@ -57,7 +57,7 @@ export default function Services({ content }: ServicesProps) {
               alt={content.image.alt}
               width={content.image.width}
               height={content.image.height}
-              className="object-center rounded-xl size-full"
+              className="object-cover rounded-xl size-full"
             />
           </motion.div>
 

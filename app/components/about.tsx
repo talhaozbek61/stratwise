@@ -26,7 +26,7 @@ export default function About({ content }: AboutProps) {
             alt={content.image.alt}
             width={content.image.width}
             height={content.image.height}
-            className="lg:max-h-[400px] w-auto object-center rounded-xl"
+            className="lg:max-h-[400px] w-auto object-cover rounded-xl"
           />
         </motion.div>
 

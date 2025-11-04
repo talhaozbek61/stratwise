@@ -59,7 +59,7 @@ export default function Portfolio({ content }: PortfolioProps) {
                   alt={study.image.alt}
                   width={study.image.width}
                   height={study.image.height}
-                  className="object-center w-full max-lg:h-auto lg:h-64 xl:h-80 group-hover:scale-105 duration-300"
+                  className="object-cover w-full max-lg:h-auto lg:h-64 xl:h-80 group-hover:scale-105 duration-300"
                 />
               </div>
 
