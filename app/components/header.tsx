@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="bg-secondary/30 text-secondary-foreground">
-      <nav className="flex items-center justify-between mx-auto max-w-7xl p-4 lg:px-6">
+      <nav className="flex items-center justify-between mx-auto max-w-2xl lg:max-w-7xl px-6 py-4">
         {/* Logo */}
         <CustomLink
           href="/"
@@ -94,14 +94,14 @@ export default function Header() {
               </div>
 
               {/* Links */}
-              <ul className="mt-6 relative flex flex-col items-start gap-4 h-full">
+              <ul className="mt-6 relative flex flex-col items-start gap-4 h-full [&_a]:w-full">
                 {navigation.map((navigate, nIdx) => (
                   <CustomLink
                     href={navigate.href}
                     variant="none"
                     target="_self"
                     key={nIdx}
-                    className="text-primary font-medium w-full py-1"
+                    className="text-primary font-medium py-1"
                     onClick={() => setOpenMenu(false)}
                   >
                     {navigate.name}

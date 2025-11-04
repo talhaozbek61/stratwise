@@ -31,7 +31,7 @@ export default function ScrollActions() {
       <Button
         onClick={handleClick}
         className={`fixed bottom-6 right-6 z-50 p-3 rounded-full ring-1 ring-primary-foreground flex items-center justify-center ${
-          showScrollTop ? "opacity-100" : "opacity-0 pointer-events-none"
+          showScrollTop ? "translate-y-0" : "translate-y-96"
         }`}
       >
         <ArrowUp className="size-5 stroke-primary-foreground" />
@@ -41,7 +41,7 @@ export default function ScrollActions() {
       <CustomLink
         variant="secondary"
         className={`fixed bottom-20 right-6 z-50 size-11 p-0 rounded-full ring-1 ring-primary flex items-center justify-center font-bold group ${
-          showCustomLink ? "opacity-100" : "opacity-0 pointer-events-none"
+          showCustomLink ? "translate-y-0" : "translate-y-96"
         }`}
       >
         T

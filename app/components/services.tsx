@@ -62,7 +62,7 @@ export default function Services({ content }: ServicesProps) {
           </motion.div>
 
           {/* Services Content */}
-          <div className="space-y-4">
+          <div className="space-y-4 overflow-hidden">
             {/* Services List */}
             <ul className="divide-y divide-primary-foreground lg:max-w-md">
               {content.services.map((service) => (
@@ -75,7 +75,7 @@ export default function Services({ content }: ServicesProps) {
                       : "text-primary-foreground/70"
                   }`}
                   onClick={() => setSelectedService(service.id)}
-                  animation={fadeAnimations.right}
+                  animation={fadeAnimations.down}
                   custom={0.6 + service.id * 0.1}
                 >
                   {service.title}
@@ -89,7 +89,7 @@ export default function Services({ content }: ServicesProps) {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              variants={fadeAnimations.right}
+              variants={fadeAnimations.down}
               custom={1.1}
             >
               {content.services[selectedService - 1]?.paragraph}
