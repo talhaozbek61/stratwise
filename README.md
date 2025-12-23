@@ -24,8 +24,6 @@ Stratwise is a modern and impressive landing page interface. With smooth transit
 
 - **Tailwind CSS 4**
 
-- **Geist UI**
-
 - **Embla Carousel**
 
 - **Lucide React**
@@ -70,4 +68,23 @@ bun install
 
 # 3. Start the dev server
 bun run dev
+```
+
+## ⚠️ Known Issue: `localStorage.getItem is not a function`
+
+When running the project, you may encounter the following error:
+TypeError: localStorage.getItem is not a function
+
+### Cause
+
+This issue is **not related to project code**.  
+It occurs due to a compatibility problem between **Next.js 15.3.x**, **Node.js v25+**, and **Turbopack**, where a non-standard `localStorage` is injected on the server side.
+
+### Solution
+
+Use a supported Node.js LTS version:
+
+```bash
+nvm install 20
+nvm use 20
 ```
